@@ -1,13 +1,10 @@
 
-from django.conf.urls import patterns, url
-from django.views.generic import View
 from django.test import TestCase
 
 from .decorators import enable
 
 
 class AfterResponseTest(TestCase):
-    urls = patterns('', url('', View.as_view()))
 
     def test_execution(self):
         self.executed = False
