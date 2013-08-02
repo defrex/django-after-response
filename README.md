@@ -17,8 +17,8 @@ request is complete, but do it in the current process and thread.
 
 Decorate your function.
 
-    import after_response
     from django.core.mail import send_mail
+    import after_response
 
     @after_response.enable
     def my_email_task(to, subject, body):
