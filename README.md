@@ -17,13 +17,13 @@ request is complete, but do it in the current process and thread.
 
 Decorate your function.
 
-    import after_request
+    import after_response
     from django.core.mail import send_mail
 
-    @after_request.enable
+    @after_response.enable
     def my_email_task(to, subject, body):
         send_mail(subject, body, 'me@example.com', [to])
 
 Then, when you want to execute the function after the current request.
 
-    my_email_task.after_request('customer@example.com', 'Confirm Signup', body)
+    my_email_task.after_response('customer@example.com', 'Confirm Signup', body)
