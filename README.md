@@ -15,6 +15,13 @@ request is complete, but do it in the current process and thread.
 
     $ pip install django-after-request
 
+Add `after_request` to your `INSTALLED_APPS`
+
+    INSTALLED_APPS = (
+        ...
+        'after_request',
+    )
+
 Decorate your function.
 
     from django.core.mail import send_mail
