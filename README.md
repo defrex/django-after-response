@@ -13,13 +13,13 @@ request is complete, but do it in the current process and thread.
 
 ### Usage
 
-    $ pip install django-after-request
+    $ pip install django-after-response
 
-Add `after_request` to your `INSTALLED_APPS`
+Add `after_response` to your `INSTALLED_APPS`
 
     INSTALLED_APPS = (
         ...
-        'after_request',
+        'after_response',
     )
 
 Decorate your function.
@@ -31,7 +31,7 @@ Decorate your function.
     def my_email_task(to, subject, body):
         send_mail(subject, body, 'me@example.com', [to])
 
-Then, when you want to execute the function after the current request.
+Then, when you want to execute the function after the current request/response.
 
     my_email_task.after_response('customer@example.com', 'Confirm Signup', body)
 
