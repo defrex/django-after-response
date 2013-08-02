@@ -27,3 +27,6 @@ Decorate your function.
 Then, when you want to execute the function after the current request.
 
     my_email_task.after_response('customer@example.com', 'Confirm Signup', body)
+
+That's it! Execution of your function will be deferred until after the
+current request/response.
