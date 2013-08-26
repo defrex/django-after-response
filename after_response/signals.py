@@ -9,7 +9,8 @@ logger = logging.getLogger(__name__)
 
 
 def run_em_all(*args, **kwargs):
-    for func, args, kwargs in function_queue:
+    while len(function_queue):
+        func, args, kwargs = function_queue.pop()
         try:
             func(*args, **kwargs)
         except Exception as e:
