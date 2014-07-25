@@ -9,7 +9,7 @@ overpowered for the task at hand, and come with lots of requirements like
 daemons and task queues.
 
 After Response is a simple alternative. It will execute code after the
-request is complete, but do it in the current process and thread.
+request is complete, without the need for additional daemons or task queues.
 
 ### Usage
 
