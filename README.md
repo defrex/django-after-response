@@ -37,3 +37,8 @@ Then, when you want to execute the function after the current request/response.
 
 That's it! Execution of your function will be deferred until after the
 current request/response.
+
+### Setting
+
+Set `AFTER_RESPONSE_RUN_ASYNC` to `False` to prevent After Response from
+executing the jobs in another thread.
