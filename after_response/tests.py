@@ -16,12 +16,14 @@ class AfterResponseTest(TestCase):
 
         self.assertEqual(self.executed, 0)
         self.client.get('/')
+        time.sleep(0.1)
         self.assertEqual(self.executed, 0)
 
         func.after_response(True)
 
         self.assertEqual(self.executed, 0)
         self.client.get('/')
+        time.sleep(0.1)
         self.assertEqual(self.executed, 1)
 
         func.after_response(True)
@@ -29,6 +31,7 @@ class AfterResponseTest(TestCase):
 
         self.assertEqual(self.executed, 1)
         self.client.get('/')
+        time.sleep(0.1)
         self.assertEqual(self.executed, 3)
 
         func.after_response(False)
@@ -36,6 +39,7 @@ class AfterResponseTest(TestCase):
 
         self.assertEqual(self.executed, 3)
         self.client.get('/')
+        time.sleep(0.1)
         self.assertEqual(self.executed, 4)
 
     def test_slow_execution(self):
