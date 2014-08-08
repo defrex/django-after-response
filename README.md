@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/defrex/django-after-response.png)](https://travis-ci.org/defrex/django-after-response)
+[![Pypi Package](https://badge.fury.io/py/django-after-response.png)](http://badge.fury.io/py/django-after-response)
 
 ### Django After Response
 
