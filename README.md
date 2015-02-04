@@ -13,29 +13,29 @@ After Response is a simple alternative. It will execute code after the
 request is complete, without the need for additional daemons or task queues.
 
 ### Usage
-
-    $ pip install django-after-response
-
+```shell
+$ pip install django-after-response
+```
 Add `after_response` to your `INSTALLED_APPS`
-
-    INSTALLED_APPS = (
-        ...
-        'after_response',
-    )
-
+```python
+INSTALLED_APPS = (
+    ...
+    'after_response',
+)
+```
 Decorate your function.
+```python
+from django.core.mail import send_mail
+import after_response
 
-    from django.core.mail import send_mail
-    import after_response
-
-    @after_response.enable
-    def my_email_task(to, subject, body):
-        send_mail(subject, body, 'me@example.com', [to])
-
+@after_response.enable
+def my_email_task(to, subject, body):
+    send_mail(subject, body, 'me@example.com', [to])
+```
 Then, when you want to execute the function after the current request/response.
-
-    my_email_task.after_response('customer@example.com', 'Confirm Signup', body)
-
+```python
+my_email_task.after_response('customer@example.com', 'Confirm Signup', body)
+```
 That's it! Execution of your function will be deferred until after the
 current request/response.
 
