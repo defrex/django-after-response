@@ -42,4 +42,6 @@ current request/response.
 ### Setting
 
 Set `AFTER_RESPONSE_RUN_ASYNC` to `False` to prevent After Response from
-executing the jobs in another thread.
+executing the jobs in another thread. Please note that this is purely
+for ease of debugging. With threading disabled Django will wait for the
+task to complete before closing the request.
